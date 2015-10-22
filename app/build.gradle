@@ -20,8 +20,8 @@ android {
         applicationId "addressextract.app"
         minSdkVersion 16
         targetSdkVersion 19
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2"
     }
 
     compileOptions {

@@ -6,6 +6,33 @@
             tools:context="${relativePackage}.${activityClass}">
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                   android:orientation="vertical">
+        <LinearLayout
+                android:id="@+id/LinearLayout02"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_alignParentBottom="true" android:orientation="horizontal">
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    bootstrap:bb_icon_right="fa-paste"
+                    bootstrap:bb_type="info"
+                    android:text="Paste Data"
+                    android:onClick="PasteData"
+                    bootstrap:bb_size="default"
+                    />
+            <com.beardedhen.androidbootstrap.BootstrapButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    bootstrap:bb_icon_right="fa-close"
+                    bootstrap:bb_type="warning"
+                    android:text="Clear"
+                    android:onClick="ClearData"
+                    bootstrap:bb_size="default"
+                    />
+        </LinearLayout>
+
     <EditText
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

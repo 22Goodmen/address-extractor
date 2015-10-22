@@ -3,6 +3,7 @@ package addressextract.app;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,7 +18,7 @@ public class MainActivity extends Activity {
 
     private  EditText editText;
     private  EditText outputText;
-    public static final String ADDRESSREGEX = "\\d{1,3}.?\\d{0,3}\\s[a-zA-Z]{2,30}\\s[a-zA-Z]{2,15}";
+    public static final String ADDRESSREGEX = "\\d{1,3}.?\\d{0,3}\\s[a-zA-Z]{2,30}\\s[a-zA-Z]{2,15}\\s[a-zA-Z]{2,15}";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +81,20 @@ public class MainActivity extends Activity {
     public void CopyAddress(View view)
     {
         CopyAddress();
+    }
+
+    public void ClearData(View view)
+    {
+        editText.setText("");
+        outputText.setText("");
+    }
+    public void PasteData(View view)
+    {
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData.Item item = clipboard.getPrimaryClip().getItemAt(0);
+        String pasteData = item.getText().toString();
+        editText.setText(pasteData);
+        ExtractAddress();
     }
 
     public void WazeGPS(View view)
